@@ -14,7 +14,6 @@ class Product(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(255))
     price = Column(String(255))
-    url = Column(String(255))
     imgurl = Column(String(255))
     rating=Column(Integer)
     created_at = Column(DateTime,default=datetime.now())

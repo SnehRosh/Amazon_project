@@ -13,7 +13,6 @@ for i in range(1,limit+1):
     # content to
     t = Tag('span',cls='a-color-base') # Title
     p = Tag('span',cls='a-price-whole')
-    l = Tag('a',cls='puisg-col-inner',output='href')
     i = Tag('img',cls='s-image',output='src')
     ra=Tag('span',cls='a-declarative')
 
@@ -21,7 +20,7 @@ for i in range(1,limit+1):
     results = scr.get_repeating_page_data(
         target = Tag(cls='s-result-list'),
         items = Tag(cls='s-card-container'),
-        title = t, price = p, link=l, imgurl=i,rating=ra
+        title = t, price = p, imgurl=i,rating=ra
     )
     print(results)
     page += 1
@@ -39,7 +38,6 @@ if len(all_results) > 0:
     for record in all_results:
         p = Product(title = record['title'],
                     price = record['price'],
-                    url = record['link'],
                     imgurl = record['imgurl'],
                     rating=record['rating'])
         
